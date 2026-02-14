@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './UserSelect.css';
 
-const WG_MEMBERS = ['Lennart', 'Anna', 'Max'];
+const WG_MEMBERS = ['Lennart', 'Juliana', 'Amelie'];
 
 export default function UserSelect({ onUserSelect }) {
   const [selectedUser, setSelectedUser] = useState('');

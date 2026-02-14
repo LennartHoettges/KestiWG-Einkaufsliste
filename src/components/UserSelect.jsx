@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './UserSelect.css';
 
 const WG_MEMBERS = ['Lennart', 'Anna', 'Max'];

@@ -18,11 +18,10 @@ export const useShoppingList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Reference to the items collection
-  const itemsCollectionRef = collection(db, 'wg-lists', 'einkaufsliste', 'items');
-
   // Real-time listener for items
   useEffect(() => {
+    // Reference to the items collection
+    const itemsCollectionRef = collection(db, 'wg-lists', 'einkaufsliste', 'items');
     const q = query(itemsCollectionRef, orderBy('createdAt', 'desc'));
     
     const unsubscribe = onSnapshot(
@@ -49,6 +48,7 @@ export const useShoppingList = () => {
   // Add new item
   const addItem = async (name, addedBy) => {
     try {
+      const itemsCollectionRef = collection(db, 'wg-lists', 'einkaufsliste', 'items');
       await addDoc(itemsCollectionRef, {
         name,
         checked: false,
